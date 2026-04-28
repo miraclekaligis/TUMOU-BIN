@@ -1,5 +1,5 @@
 # Pendeteksi-Jenis-Sampah
-♻️ Pendeteksi Sampah
+♻️ TUMOU-BIN Pendeteksi Sampah
 
 Proyek ini adalah website interaktif berbasis HTML, CSS, JavaScript, dan AI yang dapat:
 

@@ -1,51 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Pendeteksi Sampah</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUMOU-BIN</title>
 
-  <!-- AI -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest"></script>
+    <!-- TensorFlow + Teachable Machine (WAJIB urut ini) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<header>
-  <h1>♻️ AI Pendeteksi Sampah</h1>
-  <p>Scan Kamera & Upload Gambar</p>
-</header>
+  <body>
+    <header>
+      <h1>♻️ TUMOU-BIN</h1>
+      <p>Scan Kamera &amp; Upload Gambar</p>
+    </header>
 
-<main>
+    <main>
+      <section class="card">
+        <h3>📷 Kamera</h3>
+        <button id="startBtn" type="button">🎥 Mulai Kamera</button>
+        <div id="webcam-container"></div>
+      </section>
 
-  <!-- Kamera -->
-  <section class="card">
-    <h3>📷 Kamera</h3>
-    <button id="startBtn">🎥 Mulai Kamera</button>
-    <div id="webcam-container"></div>
-  </section>
+      <section class="card">
+        <h3>📁 Upload Gambar</h3>
+        <input type="file" id="upload" accept="image/*" />
+        <img id="preview" alt="Preview gambar yang diupload" />
+      </section>
 
-  <!-- Upload -->
-  <section class="card">
-    <h3>📁 Upload Gambar</h3>
-    <input type="file" id="upload" accept="image/*">
-    <img id="preview">
-  </section>
+      <section class="card">
+        <h2 id="hasil">Siap. Klik tombol kamera atau upload gambar.</h2>
+        <div id="bar"></div>
+      </section>
+    </main>
 
-  <!-- Hasil -->
-  <section class="card">
-    <h2 id="hasil">Belum ada deteksi</h2>
-    <div id="bar"></div>
-  </section>
+    <footer>
+      <p>© 2026 AI Sampah</p>
+    </footer>
 
-</main>
-
-<footer>
-  <p>© 2026 AI Sampah</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
+    <!-- script.js di paling bawah supaya tmImage sudah ada -->
+    <script src="script.js"></script>
+  </body>
 </html>
