@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Pendeteksi Sampah</title>
+
+  <!-- AI -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>♻️ AI Pendeteksi Sampah</h1>
+  <p>Scan Kamera & Upload Gambar</p>
+</header>
+
+<main>
+
+  <!-- Kamera -->
+  <section class="card">
+    <h3>📷 Kamera</h3>
+    <button id="startBtn">🎥 Mulai Kamera</button>
+    <div id="webcam-container"></div>
+  </section>
+
+  <!-- Upload -->
+  <section class="card">
+    <h3>📁 Upload Gambar</h3>
+    <input type="file" id="upload" accept="image/*">
+    <img id="preview">
+  </section>
+
+  <!-- Hasil -->
+  <section class="card">
+    <h2 id="hasil">Belum ada deteksi</h2>
+    <div id="bar"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AI Sampah</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
