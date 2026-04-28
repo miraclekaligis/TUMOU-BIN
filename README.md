@@ -1,5 +1,5 @@
 # Pendeteksi-Jenis-Sampah
-♻️ AI Web Pendeteksi Sampah + Chat Edukasi
+♻️ Pendeteksi Sampah
 
 Proyek ini adalah website interaktif berbasis HTML, CSS, JavaScript, dan AI yang dapat:
 
