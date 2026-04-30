@@ -17,3 +17,10 @@ Anorganik → plastik, kaleng, kaca.
 B3 (Bahan Berbahaya & Beracun) → baterai, obat, limbah medis.
 Chat AI untuk bertanya seputar sampah dan daur ulang.
 Tampilan website modern dan interaktif.
+
+(AUTHOR) 
+KAIROS SUMIGAR
+ANGGREINI LUMI
+MIRACLE KALIGIS
+RAFAEL KAWATU
+JUSTIN ASSA
