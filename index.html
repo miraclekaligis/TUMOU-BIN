@@ -14,31 +14,77 @@
 
   <body>
     <header>
-      <h1>♻️ TUMOU-BIN</h1>
-      <p>Scan Kamera &amp; Upload Gambar</p>
+      <div class="header-inner">
+        <div>
+          <h1>♻️ TUMOU-BIN</h1>
+          <p>Deteksi Sampah Cerdas • Kamera & Upload</p>
+        </div>
+        <button id="themeToggle" class="ghost-btn" type="button" aria-label="Ganti mode terang gelap">
+          🌙 Mode Gelap
+        </button>
+      </div>
     </header>
 
     <main>
-      <section class="card">
-        <h3>📷 Kamera</h3>
-        <button id="startBtn" type="button">🎥 Mulai Kamera</button>
-        <div id="webcam-container"></div>
+      <section class="card controls-card">
+        <h2>🧭 Pilih Sumber Deteksi</h2>
+        <div class="mode-switch" role="tablist" aria-label="Mode deteksi">
+          <button id="modeCameraBtn" class="mode-btn active" type="button" role="tab" aria-selected="true">
+            📷 Kamera
+          </button>
+          <button id="modeUploadBtn" class="mode-btn" type="button" role="tab" aria-selected="false">
+            🖼️ Upload
+          </button>
+        </div>
       </section>
 
-      <section class="card">
+      <section class="card" id="cameraCard">
+        <h3>📷 Kamera Live</h3>
+        <p class="muted">Gunakan kamera belakang untuk hasil deteksi lebih stabil.</p>
+        <button id="startBtn" type="button">🎥 Mulai Kamera</button>
+        <div id="webcam-container" aria-live="polite"></div>
+      </section>
+
+      <section class="card hidden" id="uploadCard">
         <h3>📁 Upload Gambar</h3>
+        <p class="muted">Pilih foto sampah untuk analisis instan.</p>
+        <label class="upload-label" for="upload">📎 Pilih Gambar</label>
         <input type="file" id="upload" accept="image/*" />
         <img id="preview" alt="Preview gambar yang diupload" />
       </section>
 
+      <section class="card result-card">
+        <div class="result-head">
+          <h2 id="hasil">Siap. Pilih mode kamera atau upload gambar.</h2>
+          <span id="statusBadge" class="status-badge idle">⏸️ Idle</span>
+        </div>
+
+        <div id="loading" class="loading hidden" aria-live="polite">
+          <span class="spinner" aria-hidden="true"></span>
+          <span id="loadingText">Memproses...</span>
+        </div>
+
+        <div id="bar" aria-label="Confidence bar"></div>
+        <div id="confidenceDetails" class="confidence-details"></div>
+
+        <article class="info-box">
+          <h3 id="categoryTitle">🧠 Kategori Sampah: Belum terdeteksi</h3>
+          <p id="categoryDesc">Arahkan kamera atau upload gambar untuk mendapatkan detail kategori sampah.</p>
+          <p id="ecoTip" class="eco-tip">🌱 Eco Tip: Pisahkan sampah dari sumbernya untuk meningkatkan peluang daur ulang.</p>
+        </article>
+      </section>
+
       <section class="card">
-        <h2 id="hasil">Siap. Klik tombol kamera atau upload gambar.</h2>
-        <div id="bar"></div>
+        <h3>📝 Riwayat Deteksi Terakhir</h3>
+        <ul id="historyList" class="history-list">
+          <li>Belum ada riwayat deteksi.</li>
+        </ul>
       </section>
     </main>
 
     <footer>
-      <p>© 2026 AI Sampah</p>
+      <p>© 2026 AI Sampah • TUMOU-BIN</p>
+      <p>Bantu lingkungan: kurangi, gunakan kembali, dan daur ulang.</p>
     </footer>
 
     <!-- script.js di paling bawah supaya tmImage sudah ada -->
